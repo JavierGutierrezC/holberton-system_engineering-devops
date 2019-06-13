@@ -1,2 +1,2 @@
 #!/bin/bash
-chgrp dir_holberton holberton
+chown julien:holberton /dir_holberton/
