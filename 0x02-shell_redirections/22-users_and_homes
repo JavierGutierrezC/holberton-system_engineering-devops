@@ -1,0 +1,2 @@
+#!/bin/bash
+echo /etc/passwd | sort -d | cut -c ":" -f 1,6
