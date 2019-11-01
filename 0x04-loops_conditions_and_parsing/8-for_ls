@@ -3,5 +3,5 @@
 lucas=$(ls)
 for x in $lucas
 do
-	echo $x | cut -f2 -d-
+	echo "$x" | cut -f2 -d-
 done
