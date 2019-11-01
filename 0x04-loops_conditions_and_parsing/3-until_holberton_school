@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#Using env loop
+x=1
+until ((x > 10))
+do
+	echo "Holberton School"
+	((x++))
+done
