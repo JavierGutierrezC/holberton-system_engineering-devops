@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Configures an ubuntu machine
+sudo apt-get update -y
+sudo apt-get install nginx -y
+sudo touch /var/www/html/index.html
+echo "Holberton School" > index.html
+sudo mv index.html /var/www/html/index.html
+sudo sed -i '46 i \\trewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+sudo touch /usr/share/nginx/html/404.html
+echo "Ceci n'est pas une page" > 404.html
+echo " " >> 404.html
+sudo mv 404.html /var/www/html/404.html
+sudo sed -i '42 i \\terror_page 404 /404.html;' /etc/nginx/sites-available/default
+sudo service nginx start
