@@ -2,11 +2,10 @@
 # Configure your Nginx server
 sudo apt-get update -y
 sudo apt-get install nginx -y
-sudo chmod -R 755 /var/www
+#sudo chmod -R 755 /var/www
 sudo touch /var/www/html/index.html
-sudo echo "Holberton School" > index_m.html
-sudo mv index_m.html /var/www/html/index.html
-sudo service nginx start
-redir="server_name _;\n\trewrite ^\/redirect_me https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;"
-sudo sed -i "s/server_name _;/$redir/" /etc/nginx/sites-available/default
-sudo service nginx reload
+echo "Holberton School" > index_m.html
+sudo mv index.html /var/www/html/index.html
+#sudo service nginx start
+sudo sed -i '23 i\\trewrite ^\/redirect_me https://www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+sudo service nginx restart
