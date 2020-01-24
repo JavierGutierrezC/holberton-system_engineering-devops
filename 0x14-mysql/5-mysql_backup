@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Database backup script
+mysqldump -u root -p --all-databases > backup.sql
+tar -czvf $(date "+%d-%m%d").tar.gz backup.sql
