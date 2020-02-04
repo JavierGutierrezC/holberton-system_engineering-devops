@@ -11,10 +11,10 @@ if __name__ == "__main__":
     # print(get_user.json())
     get_name = (get_user.json().get("name"))
     # print(get_name)
-    g_task = requests.get("https://jsonplaceholder.typicode.com/todos?userId={}"
-    .format(argv[1]))
+    g_tas = requests.get("https://jsonplaceholder.typicode.com/todos?userId={}"
+                         .format(argv[1]))
     # print(g_task.text)
-    json_task = g_task.json()
+    json_task = g_tas.json()
     # print(len(json_task))
     len_task = len(json_task)
     x = 0
@@ -23,9 +23,9 @@ if __name__ == "__main__":
         # print(task)
         task_completes = task.get("completed")
         # print(task_completes)
-        if task_completes == True:
+        if task_completes is True:
             task_title.append(task.get("title"))
-            print(task_title)
+            # print(task_title)
             x += 1
             # print(x)
     print("Employee {} is done with tasks({}/{}):".format(get_name, x,
