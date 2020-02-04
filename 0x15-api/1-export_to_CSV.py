@@ -11,7 +11,7 @@ if __name__ == "__main__":
     get_user = requests.get("https://jsonplaceholder.typicode.com/users/{}"
                             .format(argv[1]))
     # print(get_user.text)
-    user_name = get_user.json().get("name")
+    user_name = get_user.json().get("username")
     # print(user_name)
     tstat = requests.get("https://jsonplaceholder.typicode.com/todos?userId={}"
                          .format(argv[1]))
